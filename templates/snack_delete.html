@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Delete {{snack.title}}
+{% endblock %}
+
+
+{% block content %}
+<ul>
+    <li>
+        <a href="{{snack.get_absolute_url}}">Back to {{snack.title}}</a>
+    </li>
+</ul>
+
+<br>
+
+<form method="POST">
+    {% csrf_token %}
+<h4>Are you sure you want to delete {{snack.title}}?</h4>
+<input type="submit" value="Delete">
+</form>
+
+{% endblock %}

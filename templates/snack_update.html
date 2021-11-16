@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+Update {{snack.title}}
+
+{% endblock %}
+
+{% block content %}
+<ul>
+    <li>
+        <a href="{{snack.get_absolute_url}}">Back to {{snack.title}}</a>
+    </li>
+</ul>
+
+<form method="POST">
+    {% csrf_token %}
+    <div>
+        {{form.title}}
+    </div>
+    <div>
+        {{form.description}}
+    </div>
+    <div>
+        <input type="submit" value="Modify">
+    </div>
+
+</form>
+
+
+{% endblock %}
